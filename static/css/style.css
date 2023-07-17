@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+
+body{
+    background-image: url("/static/images/gymm2.jpg");
+    background-size: cover;
+
+}
+
+#home{
+    position: absolute;
+    top: 15%;
+    left: 28%;
+    color:#2f3c7e;
+    font-size: 37px;
+}

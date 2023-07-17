@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Planet Fitness</title>
+    <link rel="stylesheet" href="../static/css/district.css">
+</head>
+
+<center>
+    <div style="width: 100%;color: #2f3c7e;height: 64px;font-size: 37px;background-color: black;">
+        <h3>Planet Fitness</h3>
+    </div>
+</center>
+
+
+
+<body style="background-color: #FBEAEB;">
+    <div class="container">
+        <h1> <a href="/" class="button">Home</a>
+        </h1>
+        <center>
+            <h1 style="color: black;" class="title">Health Clubs in {{district}}</h1>
+        </center>
+        <section>
+            <h2 class="subtitle">Filter by Gender :</h2><br>
+            <form action="/clubs" method="GET">
+                <input type="hidden" name="district" value="{{ district }}">
+                <select name="gender" class="gender-select">
+                    <option value="male">Men</option>
+                    <option value="female">Women</option>
+                </select>
+                <input type="submit" value="Submit" class="submit-btn">
+            </form>
+
+            <h2 class="subtitle">Health Clubs</h2>
+            {%for club in clubs%}
+            <div class="club-card">
+                <h3>{{club[1]}} , {{club[2]}}</h3>
+            </div>
+            {% endfor%}
+
+
+            <h2 class="subtitle">Activities</h2>
+            {%for activity in activities%}
+            <div class="club-card">
+                <h3>{{activity[1]}} ~ {{activity[2]}}</h3>
+            </div>
+            {% endfor%}
+        </section>
+    </div>
+</body>
+
+</html>
