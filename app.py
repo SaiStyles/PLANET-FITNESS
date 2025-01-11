@@ -1,13 +1,15 @@
 import mysql.connector
 from flask import Flask,render_template,request
 
-db = mysql.connector.connect(host="localhost",user="root",password="password@1",database="fitness")
+db = mysql.connector.connect(host="Planetfitness.mysql.pythonanywhere-services.com",user="Planetfitness",password="password@1",database="Planetfitness$fitness")
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
+
+
     return render_template('home.html')
 
 
